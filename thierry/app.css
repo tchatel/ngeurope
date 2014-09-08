@@ -1,0 +1,6 @@
+input.ng-invalid.blur {
+    border: 1px solid red;
+}
+.error {
+    color: saddlebrown;
+}
