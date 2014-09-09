@@ -1,3 +1,8 @@
+.autoform-header {
+    color: darkslategray;
+    margin: 1em;
+}
+
 input.ng-invalid.blur {
     border: 1px solid red;
 }

@@ -9,11 +9,10 @@
     <script src="app.js"></script>
 </head>
 <body>
-    <h1>Autoform</h1>
     <div ng-controller="FormController">
-        <autoform desc="fields" object="obj">
-            <autoform-header>Form header : {{1 + 2}}</autoform-header>
-            <autoform-footer>Form footer </autoform-footer>
+        <h1>Autoform (valid:{{form.$valid}})</h1>
+        <autoform loader="formLoader" object="obj" name="form">
+            Entête affiché en haut du formulaire par un transclude.
         </autoform>
     </div>
 </body>
