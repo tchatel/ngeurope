@@ -1,0 +1,76 @@
+
+
+body {
+    margin: 0;
+    padding: 1em;
+}
+
+.error {
+    color: saddlebrown;
+}
+
+.autoform-header {
+    color: darkslategray;
+    margin: 1em;
+}
+
+.autoformfield-icons {
+    float: right;
+}
+.autoformfield-edit {
+    margin: 0.5em;
+    padding: 0.5em;
+    border: 1px solid #888;
+    border-radius: 2px;
+    background-color: #edc;
+}
+.autoformfield-edit label {
+    display: inline-block;
+    margin: 0 2em 1em 0;
+}
+
+.autoformfield.ng-move {
+    transition: 0.3s linear all;
+    position: relative;
+    top: 2em;
+}
+.autoformfield.ng-move.ng-move-active {
+    top: 0;
+}
+.autoformfield.ng-move + div {
+    transition: 0.3s linear all;
+    position: relative;
+    top: -2em;
+}
+.autoformfield.ng-move.ng-move-active + div {
+    top: 0;
+}
+
+
+/* Pour désactiver ce que fait Bootstrap sur les champs invalides */
+input:focus:invalid,
+textarea:focus:invalid,
+select:focus:invalid {
+    color: #555555;
+    border-color: rgba(82, 168, 236, 0.8);
+    -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(82, 168, 236, 0.6);
+    -moz-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(82, 168, 236, 0.6);
+    box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(82, 168, 236, 0.6);
+}
+input:focus:invalid:focus,
+textarea:focus:invalid:focus,
+select:focus:invalid:focus {
+    color: #555555;
+    border-color: rgba(82, 168, 236, 0.8);
+    -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(82, 168, 236, 0.6);
+    -moz-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(82, 168, 236, 0.6);
+    box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(82, 168, 236, 0.6);
+}
+
+
+input.ng-invalid.blur, input.ng-invalid.ng-dirty {
+    border: 1px solid #802420;
+}
+input.ng-invalid.blur:focus, input.ng-invalid.ng-dirty:focus {
+    border: 1px solid #802420;
+}

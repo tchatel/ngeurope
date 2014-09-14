@@ -1,0 +1,66 @@
+<div ng-if="!edit" ng-switch="desc.type" ng-form="row">
+    <div class="autoformfield-icons" ng-show="formInfo.isEditable()">
+        <div>
+            <a href="" ng-click="moveFieldUp(desc)"    tabIndex="-1"><i class="icon-circle-arrow-up"></i></a>
+            <a href="" ng-click="startEditField(desc)" tabIndex="-1"><i class="icon-edit"></i></a>
+        </div>
+        <div>
+            <a href="" ng-click="moveFieldDown(desc)"  tabIndex="-1"><i class="icon-circle-arrow-down"></i></a>
+            <a href="" ng-click="deleteField(desc)"    tabIndex="-1"><i class="icon-remove-circle"></i></a>
+        </div>
+    </div>
+    <div ng-switch-when="select" class="control-group">
+        <label class="control-label">
+            <span ng-bind="desc.label"></span><span ng-show="desc.constraints.required">*</span>
+        </label>
+        <div class="controls">
+            <select name="field" ng-model="model[desc.property]"
+                    ng-options="code as label for (code, label) in desc.list"></select>
+        </div>
+    </div>
+    <div ng-switch-when="checkbox" class="control-group">
+        <div class="controls">
+            <label class="control-label">
+                <input type="checkbox" name="field" ng-model="model[desc.property]"/>
+                <span ng-bind="desc.label"></span><span ng-show="desc.constraints.required">*</span>
+            </label>
+        </div>
+    </div>
+    <div ng-switch-default class="control-group">
+        <label class="control-label">
+            <span ng-bind="desc.label"></span><span ng-show="desc.constraints.required">*</span>
+        </label>
+        <div class="controls">
+            <input type="{{desc.type}}" name="field" ng-model="model[desc.property]"
+                   ng-model-options="{ updateOn: 'default blur', debounce: {'default': 700, 'blur': 0} }"
+                   ng-required="desc.constraints.required"
+                   ng-blur="desc.blur = true"
+                   ng-class="{blur: desc.blur}"/>
+            <span ng-messages="row.field.$error" ng-show="desc.blur || row.field.$dirty" class="error">
+                <span ng-message="number">Veuillez saisir un nombre.</span>
+                <span ng-message="email">Email invalide.</span>
+                <span ng-message="required">Champ obligatoire.</span>
+            </span>
+        </div>
+    </div>
+</div>
+
+<div ng-if="edit" class="autoformfield-edit" ng-form name="fieldEdit">
+    <div class="autoformfield-icons">
+        <a href="" ng-click="endEditField(desc)" tabIndex="-1"><i class="icon-eye-close"></i></a>
+    </div>
+    <div>
+        <label>Property: <input ng-model="desc.property"/></label>
+        <label>Label: <input ng-model="desc.label"/></label>
+        <label><input type="checkbox" ng-model="desc.constraints.required"/>required</label>
+        <label>Type: <select ng-model="desc.type"
+                             ng-options="opt.type as opt.label for opt in fieldTypes"></select></label>
+    </div>
+    <ng-switch on="desc.type">
+        <div ng-switch-when="select">
+            Values (JSON): <input json ng-model="desc.list" name="list"/>
+            <i class="icon-ok" ng-show="fieldEdit.list.$valid"></i>
+            <i class="icon-ban-circle" ng-show="fieldEdit.list.$invalid"></i>
+        </div>
+    </ng-switch>
+</div>

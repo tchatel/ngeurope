@@ -1,0 +1,9 @@
+<div ng-transclude class="autoform-header"></div>
+<form novalidate name="form" class="form-horizontal">
+    <div ng-repeat="fieldDesc in formDesc" class="autoformfield">
+        <autoform-field desc="fieldDesc" model="model"></autoform-field>
+    </div>
+</form>
+
+<div class="error">{{model}} - valid:{{form.$valid}}</div>
+<pre>{{formDesc|json}}</pre>
