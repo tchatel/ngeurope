@@ -1,0 +1,55 @@
+{
+    "fields": [
+        {
+            "property": "prenom",
+            "label": "Prénom",
+            "type": "text",
+            "constraints": {}
+        },
+        {
+            "property": "nom",
+            "label": "Nom",
+            "type": "text",
+            "constraints": {
+                "required": true
+            }
+        },
+        {
+            "property": "ps4",
+            "label": "Est-ce que tu veux une PS4 ?",
+            "type": "checkbox",
+            "constraints": {}
+        },
+        {
+            "property": "age",
+            "label": "Age",
+            "type": "number",
+            "constraints": {
+                "required": true
+            }
+        },
+        {
+            "property": "sexe",
+            "label": "Sexe",
+            "type": "select",
+            "list": {
+                "H": "Homme",
+                "F": "Femme"
+            }
+        },
+        {
+            "property": "email",
+            "label": "Adresse mail",
+            "type": "email",
+            "constraints": {
+                "required": true
+            }
+        },
+        {
+            "property": "otherEmail",
+            "label": "Autre adresse mail",
+            "type": "email",
+            "constraints": {}
+        }
+    ]
+}
