@@ -11,6 +11,16 @@ angular.module('autoform', ['ngMessages', 'ngAnimate'])
                  desc: '=',
                  model: '='
              }
-
          };
+    })
+
+    .directive('autoformfield', function () {
+        return {
+            restrict: 'AE',
+            templateUrl: 'templates/autoformfield.html',
+            scope: {
+                desc: '=',
+                model: '='
+            }
+        };
     })
