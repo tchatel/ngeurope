@@ -5,7 +5,12 @@ angular.module('autoform', ['ngMessages', 'ngAnimate'])
     .directive('autoform', function () {
          return {
              restrict: 'AE',
-             scope: false
+             templateUrl: 'templates/autoform.html',
+             transclude: true,
+             scope: {
+                 desc: '=',
+                 model: '='
+             }
 
          };
     })
