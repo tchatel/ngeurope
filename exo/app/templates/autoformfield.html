@@ -1,26 +1,26 @@
 <div ng-switch="desc.type">
-    <div ng-switch-when="select" class="control-group">
-        <label class="control-label">
+    <div ng-switch-when="select">
+        <label>
             <span ng-bind="desc.label"></span>
         </label>
-        <div class="controls">
+        <div>
             <select ng-model="model[desc.property]"
                     ng-options="code as label for (code, label) in desc.list"></select>
         </div>
     </div>
-    <div ng-switch-when="checkbox" class="control-group">
-        <div class="controls">
+    <div ng-switch-when="checkbox">
+        <div>
             <label>
                 <input type="checkbox" ng-model="model[desc.property]"/>
                 <span ng-bind="desc.label"></span>
             </label>
         </div>
     </div>
-    <div ng-switch-default class="control-group">
-        <label class="control-label">
+    <div ng-switch-default>
+        <label>
             <span ng-bind="desc.label"></span>
         </label>
-        <div class="controls">
+        <div>
             <input type="{{desc.type}}" ng-model="model[desc.property]"/>
         </div>
     </div>
