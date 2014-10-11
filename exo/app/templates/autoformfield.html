@@ -1,27 +1,38 @@
-<div ng-switch="desc.type">
+<div ng-switch="desc.type" ng-form name="row">
     <div ng-switch-when="select">
         <label>
-            <span ng-bind="desc.label"></span>
+            <span ng-bind="desc.label"></span><span ng-show="desc.constraints.required">*</span>
         </label>
         <div>
-            <select ng-model="model[desc.property]"
-                    ng-options="code as label for (code, label) in desc.list"></select>
+            <select ng-model="model[desc.property]" name="field"
+                    ng-options="code as label for (code, label) in desc.list"
+                    ng-required="desc.constraints.required"></select>
+            <span ng-messages="row.field.$error" class="error">
+                <span ng-message="required">Champ obligatoire.</span>
+            </span>
         </div>
     </div>
     <div ng-switch-when="checkbox">
         <div>
             <label>
-                <input type="checkbox" ng-model="model[desc.property]"/>
-                <span ng-bind="desc.label"></span>
+                <input type="checkbox" ng-model="model[desc.property]" name="field"
+                       ng-required="desc.constraints.required"/>
+                <span ng-bind="desc.label"></span><span ng-show="desc.constraints.required">*</span>
             </label>
         </div>
     </div>
     <div ng-switch-default>
         <label>
-            <span ng-bind="desc.label"></span>
+            <span ng-bind="desc.label"></span><span ng-show="desc.constraints.required">*</span>
         </label>
         <div>
-            <input type="{{desc.type}}" ng-model="model[desc.property]"/>
+            <input type="{{desc.type}}" ng-model="model[desc.property]" name="field"
+                   ng-required="desc.constraints.required"/>
+            <span ng-messages="row.field.$error" class="error">
+                <span ng-message="number">Veuillez saisir un nombre.</span>
+                <span ng-message="email">Email invalide.</span>
+                <span ng-message="required">Champ obligatoire.</span>
+            </span>
         </div>
     </div>
 
