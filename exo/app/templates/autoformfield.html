@@ -9,12 +9,10 @@
         </div>
     </div>
     <div ng-switch-when="checkbox">
-        <div>
-            <label>
-                <input type="checkbox" ng-model="model[desc.property]"/>
-                <span ng-bind="desc.label"></span>
-            </label>
-        </div>
+        <label>
+            <input type="checkbox" ng-model="model[desc.property]"/>
+            <span ng-bind="desc.label"></span>
+        </label>
     </div>
     <div ng-switch-default>
         <label>
