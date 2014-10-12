@@ -1,19 +1,58 @@
-
-
 body {
     margin: 0;
     padding: 1em;
+    font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+    font-size: 14px;
+    line-height: 20px;
+    color: #333;
+    background-color: #fff;
 }
-
-.error {
-    color: saddlebrown;
+autoformfield {
+    display: block;
+}
+form [ng-repeat] {
+    margin-bottom: 20px;
+}
+label:not(:last-child) {
+    display: block;
+    float: left;
+    width: 160px;
+    padding-top: 5px;
+    text-align: right;
+}
+label + div, label:last-child {
+    margin-left: 180px;
+    vertical-align: middle;
+}
+input, select {
+    font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+    background-color: #fff;
+    border: 2px solid #ccc;
+    width: 206px;
+    height: 20px;
+    padding: 4px 6px;
+    font-size: 14px;
+    line-height: 20px;
+    color: #555;
+    border-radius: 4px;
+    vertical-align: middle;
+}
+input:focus, select:focus {
+    border: 2px solid #0088cc;
+    outline:none;
+}
+input[type="checkbox"] {
+    width: auto;
+}
+select {
+    height: 30px;
+    width: 220px;
 }
 
 .autoform-header {
     color: darkslategray;
     margin: 1em;
 }
-
 .autoformfield-icons {
     float: right;
 }
@@ -30,10 +69,10 @@ body {
 }
 
 .autoformfield.ng-move {
-     transition: 0.3s linear all;
-     position: relative;
-     top: 2em;
- }
+    transition: 0.3s linear all;
+    position: relative;
+    top: 2em;
+}
 .autoformfield.ng-move.ng-move-active {
     top: 0;
 }
@@ -46,31 +85,9 @@ body {
     top: 0;
 }
 
-
-/* Pour désactiver ce que fait Bootstrap sur les champs invalides */
-input:focus:invalid,
-textarea:focus:invalid,
-select:focus:invalid {
-    color: #555555;
-    border-color: rgba(82, 168, 236, 0.8);
-    -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(82, 168, 236, 0.6);
-    -moz-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(82, 168, 236, 0.6);
-    box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(82, 168, 236, 0.6);
-}
-input:focus:invalid:focus,
-textarea:focus:invalid:focus,
-select:focus:invalid:focus {
-    color: #555555;
-    border-color: rgba(82, 168, 236, 0.8);
-    -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(82, 168, 236, 0.6);
-    -moz-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(82, 168, 236, 0.6);
-    box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(82, 168, 236, 0.6);
+.error {
+    color: saddlebrown;
 }
 
+/* ----- fin des styles fournis ----- */
 
-input.ng-invalid.blur, input.ng-invalid.ng-dirty {
-    border: 1px solid #802420;
-}
-input.ng-invalid.blur:focus, input.ng-invalid.ng-dirty:focus {
-    border: 1px solid #802420;
-}

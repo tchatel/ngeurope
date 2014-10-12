@@ -1,6 +1,5 @@
 <div ng-transclude class="autoform-header"></div>
-<form novalidate name="form" class="form-horizontal">
-    <div ng-repeat="field in desc.fields" class="autoformfield">
-        <autoformfield desc="field" model="model"></autoformfield>
-    </div>
+<form novalidate name="form">
+    <autoformfield ng-repeat="field in desc.fields" desc="field" model="model"></autoformfield>
 </form>
+{{model}}
