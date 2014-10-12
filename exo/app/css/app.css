@@ -88,9 +88,9 @@ select {
 
 /* ----- fin des styles fournis ----- */
 
-input.ng-invalid {
+input.ng-invalid.blur, input.ng-invalid.ng-dirty {
     border: 2px solid #c99;
 }
-input.ng-invalid:focus {
+input.ng-invalid.blur:focus, input.ng-invalid.ng-dirty:focus {
     border: 2px solid #c55;
 }

@@ -6,8 +6,9 @@
         <div>
             <select ng-model="model[desc.property]" name="field"
                     ng-options="code as label for (code, label) in desc.list"
-                    ng-required="desc.constraints.required"></select>
-            <span ng-messages="row.field.$error" class="error">
+                    ng-required="desc.constraints.required" ng-blur="desc.blur = true"
+                    ng-class="{blur: desc.blur}"></select>
+            <span ng-messages="row.field.$error" class="error" ng-show="desc.blur || row.field.$dirty">
                 <span ng-message="required">Champ obligatoire.</span>
             </span>
         </div>
@@ -16,7 +17,8 @@
         <div>
             <label>
                 <input type="checkbox" ng-model="model[desc.property]" name="field"
-                       ng-required="desc.constraints.required"/>
+                       ng-required="desc.constraints.required" ng-blur="desc.blur = true"
+                       ng-class="{blur: desc.blur}"/>
                 <span ng-bind="desc.label"></span><span ng-show="desc.constraints.required">*</span>
             </label>
         </div>
@@ -27,8 +29,10 @@
         </label>
         <div>
             <input type="{{desc.type}}" ng-model="model[desc.property]" name="field"
-                   ng-required="desc.constraints.required"/>
-            <span ng-messages="row.field.$error" class="error">
+                   ng-model-options="{ updateOn: 'default blur', debounce: {'default': 700, 'blur': 0} }"
+                   ng-required="desc.constraints.required" ng-blur="desc.blur = true"
+                   ng-class="{blur: desc.blur}"/>
+            <span ng-messages="row.field.$error" class="error" ng-show="desc.blur || row.field.$dirty">
                 <span ng-message="number">Veuillez saisir un nombre.</span>
                 <span ng-message="email">Email invalide.</span>
                 <span ng-message="required">Champ obligatoire.</span>
