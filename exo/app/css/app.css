@@ -7,6 +7,9 @@ body {
     color: #333;
     background-color: #fff;
 }
+autoformfield {
+    display: block;
+}
 form [ng-repeat] {
     margin-bottom: 20px;
 }
