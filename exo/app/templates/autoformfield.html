@@ -13,13 +13,11 @@
         </div>
     </div>
     <div ng-switch-when="checkbox">
-        <div>
-            <label>
-                <input type="checkbox" ng-model="model[desc.property]" name="field"
-                       ng-required="desc.constraints.required"/>
-                <span ng-bind="desc.label"></span><span ng-show="desc.constraints.required">*</span>
-            </label>
-        </div>
+        <label>
+            <input type="checkbox" ng-model="model[desc.property]" name="field"
+                   ng-required="desc.constraints.required"/>
+            <span ng-bind="desc.label"></span><span ng-show="desc.constraints.required">*</span>
+        </label>
     </div>
     <div ng-switch-default>
         <label>
