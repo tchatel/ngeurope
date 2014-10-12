@@ -1,7 +1,5 @@
 <div ng-transclude class="autoform-header"></div>
 <form novalidate name="form">
-    <div ng-repeat="field in desc.fields">
-        <autoformfield desc="field" model="model"></autoformfield>
-    </div>
+    <autoformfield ng-repeat="field in desc.fields" desc="field" model="model"></autoformfield>
 </form>
 {{model}}
