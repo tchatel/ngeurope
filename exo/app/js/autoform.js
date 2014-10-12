@@ -2,14 +2,27 @@
 
 angular.module('autoform', ['ngMessages', 'ngAnimate'])
 
-    .directive('autoform', function () {
+    .directive('autoform', function ($injector) {
          return {
              restrict: 'AE',
              templateUrl: 'templates/autoform.html',
              transclude: true,
              scope: {
-                 desc: '=',
                  model: '='
+             },
+             link: function (scope, element, attrs) {
+                 if (attrs.service) {
+                     var loader = $injector.get(attrs.service);
+                     loader().then(function (desc) {
+                         scope.desc = desc;
+                     });
+                 } else {
+                     // Allow usage without service name, taking the description from the 'desc' attribute
+                     // The $watch must watch in parent (non isolated) scope.
+                     scope.$parent.$watch('desc', function (desc) {
+                         scope.desc = desc;
+                     });
+                 }
              }
          };
     })

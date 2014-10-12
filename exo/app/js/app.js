@@ -3,10 +3,6 @@
 angular.module('app', ['autoform'])
     .controller('AppController', function ($scope, formLoader) {
         $scope.obj = {};
-        formLoader().then(function (desc) {
-            $scope.desc = desc;
-        })
-
     })
 
     // Service chargeant la description du formulaire en HTTP.
