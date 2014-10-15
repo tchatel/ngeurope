@@ -14,7 +14,24 @@ angular.module('autoform', ['ngMessages', 'ngAnimate'])
              controller: function ($scope) {
                  this.isEditable = function () {
                      return $scope.editable;
+                 };
+                 function swap(array, i, j) {
+                     var elem = array[i];
+                     array[i] = array[j];
+                     array[j] = elem;
                  }
+                 this.moveFieldUp = function (fieldDesc) {
+                     var index = $scope.desc.indexOf(fieldDesc);
+                     if (index > 0) {
+                         swap($scope.desc, index, index - 1);
+                     }
+                 };
+                 this.moveFieldDown = function (fieldDesc) {
+                     var index = $scope.desc.indexOf(fieldDesc);
+                     if (index < $scope.desc.length - 1) {
+                         swap($scope.desc, index, index + 1);
+                     }
+                 };
              },
              link: function (scope, element, attrs) {
                  if (attrs.service) {
@@ -45,7 +62,7 @@ angular.module('autoform', ['ngMessages', 'ngAnimate'])
             link: function (scope, element, attrs, ctrl) {
                 scope.isEditable = function () {
                     return ctrl.isEditable();
-                }
+                };
             }
         };
     })
