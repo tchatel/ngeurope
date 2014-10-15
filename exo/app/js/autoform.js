@@ -20,16 +20,16 @@ angular.module('autoform', ['ngMessages', 'ngAnimate'])
                      array[i] = array[j];
                      array[j] = elem;
                  }
-                 this.moveFieldUp = function (fieldDesc) {
-                     var index = $scope.desc.indexOf(fieldDesc);
+                 this.moveUp = function (fieldDesc) {
+                     var index = $scope.desc.fields.indexOf(fieldDesc);
                      if (index > 0) {
-                         swap($scope.desc, index, index - 1);
+                         swap($scope.desc.fields, index, index - 1);
                      }
                  };
-                 this.moveFieldDown = function (fieldDesc) {
-                     var index = $scope.desc.indexOf(fieldDesc);
-                     if (index < $scope.desc.length - 1) {
-                         swap($scope.desc, index, index + 1);
+                 this.moveDown = function (fieldDesc) {
+                     var index = $scope.desc.fields.indexOf(fieldDesc);
+                     if (index < $scope.desc.fields.length - 1) {
+                         swap($scope.desc.fields, index, index + 1);
                      }
                  };
              },
@@ -62,6 +62,12 @@ angular.module('autoform', ['ngMessages', 'ngAnimate'])
             link: function (scope, element, attrs, ctrl) {
                 scope.isEditable = function () {
                     return ctrl.isEditable();
+                };
+                scope.moveUp = function () {
+                    ctrl.moveUp(scope.desc);
+                };
+                scope.moveDown = function () {
+                    ctrl.moveDown(scope.desc);
                 };
             }
         };
