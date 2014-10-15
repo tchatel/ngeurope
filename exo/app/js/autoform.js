@@ -32,6 +32,10 @@ angular.module('autoform', ['ngMessages', 'ngAnimate'])
                          swap($scope.desc.fields, index, index + 1);
                      }
                  };
+                 this.remove = function (fieldDesc) {
+                     var index = $scope.desc.fields.indexOf(fieldDesc);
+                     $scope.desc.fields.splice(index, 1);
+                 };
              },
              link: function (scope, element, attrs) {
                  if (attrs.service) {
@@ -68,6 +72,9 @@ angular.module('autoform', ['ngMessages', 'ngAnimate'])
                 };
                 scope.moveDown = function () {
                     ctrl.moveDown(scope.desc);
+                };
+                scope.remove = function () {
+                    ctrl.remove(scope.desc);
                 };
             }
         };
