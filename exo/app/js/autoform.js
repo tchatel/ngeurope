@@ -14,7 +14,7 @@ angular.module('autoform', ['ngMessages', 'ngAnimate'])
              controller: function ($scope) {
                  this.isEditable = function () {
                      return $scope.editable;
-                 }
+                 };
              },
              link: function (scope, element, attrs) {
                  if (attrs.service) {
