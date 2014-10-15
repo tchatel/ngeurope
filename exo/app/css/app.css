@@ -68,20 +68,20 @@ select {
     margin: 0 2em 1em 0;
 }
 
-.autoformfield.ng-move {
+autoformfield.ng-move {
      transition: 0.3s linear all;
      position: relative;
      top: 2em;
  }
-.autoformfield.ng-move.ng-move-active {
+autoformfield.ng-move.ng-move-active {
     top: 0;
 }
-.autoformfield.ng-move + div {
+autoformfield.ng-move + div {
     transition: 0.3s linear all;
     position: relative;
     top: -2em;
 }
-.autoformfield.ng-move.ng-move-active + div {
+autoformfield.ng-move.ng-move-active + div {
     top: 0;
 }
 
