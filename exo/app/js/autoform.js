@@ -11,11 +11,6 @@ angular.module('autoform', ['ngMessages', 'ngAnimate'])
                  model: '=',
                  editable: '='
              },
-             controller: function ($scope) {
-                 this.isEditable = function () {
-                     return $scope.editable;
-                 }
-             },
              link: function (scope, element, attrs) {
                  if (attrs.service) {
                      var loader = $injector.get(attrs.service);
@@ -40,12 +35,6 @@ angular.module('autoform', ['ngMessages', 'ngAnimate'])
             scope: {
                 desc: '=',
                 model: '='
-            },
-            require: '^autoform',
-            link: function (scope, element, attrs, ctrl) {
-                scope.isEditable = function () {
-                    return ctrl.isEditable();
-                }
             }
         };
     })
