@@ -1,4 +1,14 @@
 <div ng-switch="desc.type" ng-form name="row">
+    <div class="autoformfield-icons" ng-show="isEditable()">
+        <div>
+            <a href="" ng-click="moveFieldUp(desc)"    tabIndex="-1"><i class="icon-circle-arrow-up"></i></a>
+            <a href="" ng-click="startEditField(desc)" tabIndex="-1"><i class="icon-edit"></i></a>
+        </div>
+        <div>
+            <a href="" ng-click="moveFieldDown(desc)"  tabIndex="-1"><i class="icon-circle-arrow-down"></i></a>
+            <a href="" ng-click="deleteField(desc)"    tabIndex="-1"><i class="icon-remove-circle"></i></a>
+        </div>
+    </div>
     <div ng-switch-when="select">
         <label>
             <span ng-bind="desc.label"></span><span ng-show="desc.constraints.required">*</span>

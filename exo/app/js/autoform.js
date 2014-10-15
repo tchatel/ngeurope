@@ -8,7 +8,13 @@ angular.module('autoform', ['ngMessages', 'ngAnimate'])
              templateUrl: 'templates/autoform.html',
              transclude: true,
              scope: {
-                 model: '='
+                 model: '=',
+                 editable: '='
+             },
+             controller: function ($scope) {
+                 this.isEditable = function () {
+                     return $scope.editable;
+                 }
              },
              link: function (scope, element, attrs) {
                  if (attrs.service) {
@@ -34,6 +40,12 @@ angular.module('autoform', ['ngMessages', 'ngAnimate'])
             scope: {
                 desc: '=',
                 model: '='
+            },
+            require: '^autoform',
+            link: function (scope, element, attrs, ctrl) {
+                scope.isEditable = function () {
+                    return ctrl.isEditable();
+                }
             }
         };
     })
