@@ -45,7 +45,7 @@ angular.module('autoform', ['ngMessages', 'ngAnimate'])
             link: function (scope, element, attrs, ctrl) {
                 scope.isEditable = function () {
                     return ctrl.isEditable();
-                }
+                };
             }
         };
     })
