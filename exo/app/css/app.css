@@ -68,6 +68,16 @@ select {
     margin: 0 2em 1em 0;
 }
 
+autoformfield {
+    clear: both;
+}
+
+autoformfield.ng-leave {
+    transition: 0.3s linear all;
+}
+autoformfield.ng-leave.ng-leave-active {
+    opacity: 0;
+}
 autoformfield.ng-move {
      transition: 0.3s linear all;
      position: relative;
