@@ -78,7 +78,6 @@ autoformfield.ng-leave {
 autoformfield.ng-leave.ng-leave-active {
     opacity: 0;
 }
-
 autoformfield.ng-move {
      transition: 0.3s linear all;
      position: relative;
