@@ -1,12 +1,12 @@
-<div ng-switch="desc.type" ng-form name="row">
+<div ng-if="!isEditing()" ng-switch="desc.type" ng-form name="row">
     <div class="autoformfield-icons" ng-show="isEditable()">
         <div>
-            <a href="" ng-click="moveUp()" tabIndex="-1"><i class="icon-circle-arrow-up"></i></a>
-            <a href="" tabIndex="-1"><i class="icon-edit"></i></a>
+            <a href="" ng-click="moveUp()"    tabIndex="-1"><i class="icon-circle-arrow-up"></i></a>
+            <a href="" ng-click="startEdit()" tabIndex="-1"><i class="icon-edit"></i></a>
         </div>
         <div>
-            <a href="" ng-click="moveDown()" tabIndex="-1"><i class="icon-circle-arrow-down"></i></a>
-            <a href="" ng-click="remove()" tabIndex="-1"><i class="icon-remove-circle"></i></a>
+            <a href="" ng-click="moveDown()"  tabIndex="-1"><i class="icon-circle-arrow-down"></i></a>
+            <a href="" ng-click="remove()"    tabIndex="-1"><i class="icon-remove-circle"></i></a>
         </div>
     </div>
     <div ng-switch-when="select">
@@ -47,5 +47,12 @@
             </span>
         </div>
     </div>
-
+</div>
+<div ng-if="isEditing()" ng-form name="row">
+    <div class="autoformfield-icons">
+        <a href="" ng-click="stopEdit(desc)" tabIndex="-1"><i class="icon-eye-close"></i></a>
+    </div>
+    <div>
+        EDIT
+    </div>
 </div>
