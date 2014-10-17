@@ -20,7 +20,6 @@ angular.module('autoform', ['ngMessages', 'ngAnimate'])
                     array[i] = array[j];
                     array[j] = elem;
                 }
-
                 this.moveUp = function (fieldDesc) {
                     var index = $scope.desc.fields.indexOf(fieldDesc);
                     if (index > 0) {
@@ -41,7 +40,7 @@ angular.module('autoform', ['ngMessages', 'ngAnimate'])
                 this.startEdit = function (fieldDesc) {
                     editField = fieldDesc;
                 };
-                this.stopEdit = function (fieldDesc) {
+                this.stopEdit = function () {
                     editField = null;
                 };
                 this.isEditing = function (fieldDesc) {
@@ -91,7 +90,7 @@ angular.module('autoform', ['ngMessages', 'ngAnimate'])
                     ctrl.startEdit(scope.desc);
                 };
                 scope.stopEdit = function () {
-                    ctrl.stopEdit(scope.desc);
+                    ctrl.stopEdit();
                 };
                 scope.isEditing = function () {
                     return ctrl.isEditing(scope.desc);
