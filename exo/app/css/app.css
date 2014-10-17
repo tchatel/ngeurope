@@ -64,8 +64,11 @@ select {
     background-color: #edc;
 }
 .autoformfield-edit label {
+    float: none;
     display: inline-block;
+    width: auto;
     margin: 0 2em 1em 0;
+    vertical-align: baseline;
 }
 
 autoformfield {

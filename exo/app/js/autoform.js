@@ -3,14 +3,6 @@
 angular.module('autoform', ['ngMessages', 'ngAnimate'])
 
     .directive('autoform', function ($injector) {
-        var fieldTypes = [
-            {type: 'text',      label: "Champ texte"},
-            {type: 'select',    label: "Liste déroulante"},
-            {type: 'number',    label: "Champ nombre"},
-            {type: 'email',     label: "Champ email"},
-            {type: 'url',       label: "Champ URL"},
-            {type: 'checkbox',  label: "Case à cocher"}
-        ];
         return {
             restrict: 'AE',
             templateUrl: 'templates/autoform.html',
@@ -28,7 +20,6 @@ angular.module('autoform', ['ngMessages', 'ngAnimate'])
                     array[i] = array[j];
                     array[j] = elem;
                 }
-
                 this.moveUp = function (fieldDesc) {
                     var index = $scope.desc.fields.indexOf(fieldDesc);
                     if (index > 0) {
@@ -49,13 +40,20 @@ angular.module('autoform', ['ngMessages', 'ngAnimate'])
                 this.startEdit = function (fieldDesc) {
                     editField = fieldDesc;
                 };
-                this.stopEdit = function (fieldDesc) {
+                this.stopEdit = function () {
                     editField = null;
                 };
                 this.isEditing = function (fieldDesc) {
                     return editField == fieldDesc;
                 };
-                this.fieldTypes = fieldTypes;
+                this.fieldTypes = [
+                    {type: 'text',      label: "Champ texte"},
+                    {type: 'select',    label: "Liste déroulante"},
+                    {type: 'number',    label: "Champ nombre"},
+                    {type: 'email',     label: "Champ email"},
+                    {type: 'url',       label: "Champ URL"},
+                    {type: 'checkbox',  label: "Case à cocher"}
+                ];
             },
             link: function (scope, element, attrs) {
                 if (attrs.service) {
@@ -100,7 +98,7 @@ angular.module('autoform', ['ngMessages', 'ngAnimate'])
                     ctrl.startEdit(scope.desc);
                 };
                 scope.stopEdit = function () {
-                    ctrl.stopEdit(scope.desc);
+                    ctrl.stopEdit();
                 };
                 scope.isEditing = function () {
                     return ctrl.isEditing(scope.desc);
