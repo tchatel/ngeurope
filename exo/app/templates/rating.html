@@ -1,0 +1,6 @@
+<div>
+    <span class="rating">
+        <span ng-repeat="value in values" ng-class="{selected: value <= val}" ng-click="setValue(value)"></span>
+    </span>
+    &nbsp;<em ng-bind="val"></em>
+</div>

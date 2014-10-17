@@ -37,3 +37,25 @@ angular.module('autoform', ['ngMessages', 'ngAnimate'])
             }
         };
     })
+
+    .directive('rating', function () {
+        return {
+            restrict: 'AE',
+            require: 'ngModel',
+            replace: true,
+            templateUrl: 'templates/rating.html',
+            scope: {
+                values: '=',
+                default: '='
+            },
+            link: function (scope, element, attrs, ngModel) {
+                scope.setValue = function (val) {
+                    scope.val = val;
+                    // Update ngModel value
+                    ngModel.$setViewValue(val);
+                };
+
+                scope.setValue(ngModel.$modelValue > 0 ? ngModel.$modelValue : scope.default);
+            }
+        };
+    });

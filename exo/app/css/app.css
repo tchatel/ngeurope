@@ -111,3 +111,19 @@ input.ng-invalid.blur, input.ng-invalid.ng-dirty {
 input.ng-invalid.blur:focus, input.ng-invalid.ng-dirty:focus {
     border: 2px solid #c55;
 }
+
+.rating > span {
+    display: inline-block;
+    position: relative;
+    width: 1.1em;
+}
+.rating > span:hover {
+    cursor: pointer;
+}
+.rating > span:before {
+    content: "☆";
+}
+.rating > span:hover:before,
+.rating > span.selected:before {
+    content: "\2605";
+}

@@ -50,6 +50,15 @@
             "label": "Autre adresse mail",
             "type": "email",
             "constraints": {}
+        },
+        {
+            "property": "rating",
+            "label": "Note",
+            "type": "rating",
+            "conditions": {
+                "defaultValue": 3,
+                "values": [1,2,3,4,5]
+            }
         }
     ]
 }
