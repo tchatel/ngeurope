@@ -54,6 +54,12 @@ angular.module('autoform', ['ngMessages', 'ngAnimate'])
                     {type: 'url',       label: "Champ URL"},
                     {type: 'checkbox',  label: "Case à cocher"}
                 ];
+                var ctrl = this;
+                $scope.add = function () {
+                    var newFieldDesc = {};
+                    $scope.desc.fields.push(newFieldDesc);
+                    ctrl.startEdit(newFieldDesc);
+                };
             },
             link: function (scope, element, attrs) {
                 if (attrs.service) {

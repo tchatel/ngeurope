@@ -1,5 +1,9 @@
 <div ng-transclude class="autoform-header"></div>
 <form novalidate name="form">
         <autoformfield ng-repeat="field in desc.fields" desc="field" model="model"></autoformfield>
+        <div class="autoformfield-icons" ng-show="editable">
+            <a href="" ng-click="add()" tabIndex="-1"><i class="icon-plus-sign"></i></a>
+        </div>
 </form>
+<br/>
 {{model}}
