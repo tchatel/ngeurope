@@ -3,6 +3,14 @@
 angular.module('autoform', ['ngMessages', 'ngAnimate'])
 
     .directive('autoform', function ($injector) {
+        var fieldTypes = [
+            {type: 'text',      label: "Champ texte"},
+            {type: 'select',    label: "Liste déroulante"},
+            {type: 'number',    label: "Champ nombre"},
+            {type: 'email',     label: "Champ email"},
+            {type: 'url',       label: "Champ URL"},
+            {type: 'checkbox',  label: "Case à cocher"}
+        ];
         return {
             restrict: 'AE',
             templateUrl: 'templates/autoform.html',
@@ -47,6 +55,7 @@ angular.module('autoform', ['ngMessages', 'ngAnimate'])
                 this.isEditing = function (fieldDesc) {
                     return editField == fieldDesc;
                 };
+                this.fieldTypes = fieldTypes;
             },
             link: function (scope, element, attrs) {
                 if (attrs.service) {
@@ -96,6 +105,7 @@ angular.module('autoform', ['ngMessages', 'ngAnimate'])
                 scope.isEditing = function () {
                     return ctrl.isEditing(scope.desc);
                 };
+                scope.fieldTypes = ctrl.fieldTypes;
             }
         };
     })

@@ -53,6 +53,11 @@
         <a href="" ng-click="stopEdit(desc)" tabIndex="-1"><i class="icon-eye-close"></i></a>
     </div>
     <div>
-        EDIT
+        <label>Propriété: <input ng-model="desc.property"/></label>
+        <label>Libellé: <input ng-model="desc.label"/></label>
+        <label><input type="checkbox" ng-model="desc.constraints.required"/>obligatoire</label>
+        <label>Type: <select ng-model="desc.type"
+                             ng-options="opt.type as opt.label for opt in fieldTypes"></select></label>
+
     </div>
 </div>
