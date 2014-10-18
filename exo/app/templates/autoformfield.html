@@ -4,13 +4,13 @@
             <span ng-bind="desc.label"></span>
         </label>
         <div>
-            <select ng-model="model[desc.property]"
-                    ng-options="code as label for (code, label) in desc.list"></select>
+            <select></select>
+            <!-- message d'erreur -->
         </div>
     </div>
     <div ng-switch-when="checkbox">
         <label>
-            <input type="checkbox" ng-model="model[desc.property]"/>
+            <input type="checkbox"/>
             <span ng-bind="desc.label"></span>
         </label>
     </div>
@@ -19,8 +19,8 @@
             <span ng-bind="desc.label"></span>
         </label>
         <div>
-            <input type="{{desc.type}}" ng-model="model[desc.property]"/>
+            <input type="{{desc.type}}"/>
+            <!-- message d'erreur -->
         </div>
     </div>
-
 </div>
