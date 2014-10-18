@@ -6,6 +6,7 @@
         <div>
             <select ng-model="model[desc.property]"
                     ng-options="code as label for (code, label) in desc.list"></select>
+            <!-- message d'erreur -->
         </div>
     </div>
     <div ng-switch-when="checkbox">
@@ -20,6 +21,7 @@
         </label>
         <div>
             <input type="{{desc.type}}" ng-model="model[desc.property]"/>
+            <!-- message d'erreur -->
         </div>
     </div>
 
