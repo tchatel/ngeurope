@@ -48,6 +48,9 @@ select {
     height: 30px;
     width: 220px;
 }
+input[json] {
+    width: 600px;
+}
 
 .autoform-header {
     color: darkslategray;
