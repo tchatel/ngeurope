@@ -26,7 +26,7 @@
             <span ng-bind="desc.label"></span><span ng-show="desc.constraints.required">*</span>
         </label>
         <div>
-            <span rating ng-model="model[desc.property]"></span>
+            <rating ng-model="model[desc.property]"></rating>
         </div>
     </div>
     <div ng-switch-default>
