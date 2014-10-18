@@ -64,10 +64,30 @@ select {
     background-color: #edc;
 }
 .autoformfield-edit label {
+    float: none;
     display: inline-block;
+    width: auto;
     margin: 0 2em 1em 0;
+    vertical-align: baseline;
 }
 
+autoformfield {
+    clear: both;
+}
+
+autoformfield.ng-enter {
+    transition: 0.3s linear all;
+    opacity: 0;
+}
+autoformfield.ng-enter.ng-enter-active {
+    opacity: 1;
+}
+autoformfield.ng-leave {
+    transition: 0.3s linear all;
+}
+autoformfield.ng-leave.ng-leave-active {
+    opacity: 0;
+}
 autoformfield.ng-move {
      transition: 0.3s linear all;
      position: relative;
