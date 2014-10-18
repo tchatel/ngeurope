@@ -42,20 +42,15 @@ angular.module('autoform', ['ngMessages', 'ngAnimate'])
         return {
             restrict: 'AE',
             require: 'ngModel',
-            replace: true,
             templateUrl: 'templates/rating.html',
-            scope: {
-                values: '=',
-                default: '='
-            },
+            scope: {},
             link: function (scope, element, attrs, ngModel) {
-                scope.setValue = function (val) {
-                    scope.val = val;
+                scope.values = [1, 2, 3, 4 , 5];
+                scope.setValue = function (value) {
+                    scope.currentValue = value;
                     // Update ngModel value
-                    ngModel.$setViewValue(val);
+                    ngModel.$setViewValue(value);
                 };
-
-                scope.setValue(ngModel.$modelValue > 0 ? ngModel.$modelValue : scope.default);
             }
         };
     });

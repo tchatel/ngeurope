@@ -22,9 +22,12 @@
         </label>
     </div>
     <div ng-switch-when="rating">
-        <label ng-bind="desc.label"></label>
-        <div rating ng-model="model[desc.property]" default="desc.conditions.defaultValue"
-             values="desc.conditions.values"></div>
+        <label>
+            <span ng-bind="desc.label"></span><span ng-show="desc.constraints.required">*</span>
+        </label>
+        <div>
+            <span rating ng-model="model[desc.property]"></span>
+        </div>
     </div>
     <div ng-switch-default>
         <label>

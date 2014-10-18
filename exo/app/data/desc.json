@@ -54,11 +54,7 @@
         {
             "property": "rating",
             "label": "Note",
-            "type": "rating",
-            "conditions": {
-                "defaultValue": 3,
-                "values": [1,2,3,4,5]
-            }
+            "type": "rating"
         }
     ]
 }
