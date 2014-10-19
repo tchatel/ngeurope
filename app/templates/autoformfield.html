@@ -31,6 +31,14 @@
             <span ng-bind="desc.label"></span><span ng-show="desc.constraints.required">*</span>
         </label>
     </div>
+    <div ng-switch-when="rating">
+        <label>
+            <span ng-bind="desc.label"></span><span ng-show="desc.constraints.required">*</span>
+        </label>
+        <div>
+            <rating ng-model="model[desc.property]"></rating>
+        </div>
+    </div>
     <div ng-switch-default>
         <label>
             <span ng-bind="desc.label"></span><span ng-show="desc.constraints.required">*</span>
