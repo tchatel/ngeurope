@@ -1,0 +1,5 @@
+<span ng-repeat="value in values" ng-click="setValue(value)">
+    <i class="icon-star" ng-show="value <= currentValue"></i>
+    <i class="icon-star-empty" ng-hide="value <= currentValue"></i>
+</span>
+&nbsp;<em ng-bind="currentValue"></em>
