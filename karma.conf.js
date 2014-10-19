@@ -1,12 +1,12 @@
 module.exports = function (config) {
     config.set({
-        basePath: 'exo',
+        basePath: './',
         files: [
             'app/lib/angular/angular.js',
-            '../app/lib/angular/angular-mocks.js',
-            '../app/lib/angular/angular-*.js',
-            '../app/js/**/*.js',
-            '../app/templates/**/*.html'
+            'app/lib/angular/angular-mocks.js',
+            'app/lib/angular/angular-*.js',
+            'app/js/**/*.js',
+            'app/templates/**/*.html'
         ],
         preprocessors: {
             'app/templates/**/*.html': ['ng-html2js']
