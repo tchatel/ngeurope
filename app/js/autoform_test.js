@@ -33,39 +33,39 @@ describe("directives", function () {
         beforeEach(function () {
             inject(function ($compile, $rootScope) {
                 scope = $rootScope.$new();
-                html = $compile('<autoformfield desc="desc" model="obj"></autoformfield>')(scope);
+                html = $compile('<autoform desc="desc" model="obj">Entête</autoform>')(scope);
             });
         });
 
         it ("should generate a text input field", function () {
             inject(function ($compile, $rootScope) {
-                scope.desc = descFieldText;
+                scope.desc = {"fields": [descFieldText]};
                 scope.$digest(); // Needed to update the directive template
-                expect(html.find('input').attr('ng-model')).toEqual('model[desc.property]');
+                expect(html.find('autoformfield').find('input').attr('ng-model')).toEqual('model[desc.property]');
             });
         });
 
         it ("should generate a checkbox", function () {
             inject(function ($compile, $rootScope) {
-                scope.desc = descFieldCheckbox;
+                scope.desc = {"fields": [descFieldCheckbox]};
                 scope.$digest(); // Needed to update the directive template
-                expect(html.find('input').attr('type')).toEqual('checkbox');
+                expect(html.find('autoformfield').find('input').attr('type')).toEqual('checkbox');
             });
         });
 
         it ("should generate an email input field", function () {
             inject(function ($compile, $rootScope) {
-                scope.desc = descFieldEmail;
+                scope.desc = {"fields": [descFieldEmail]};
                 scope.$digest(); // Needed to update the directive template
-                expect(html.find('input').attr('type')).toEqual('email');
+                expect(html.find('autoformfield').find('input').attr('type')).toEqual('email');
             });
         });
 
         it ("should generate a checkbox", function () {
             inject(function ($compile, $rootScope) {
-                scope.desc = descFieldSelect;
+                scope.desc = {"fields": [descFieldSelect]};
                 scope.$digest(); // Needed to update the directive template
-                var options = html.find('select').find('option');
+                var options = html.find('autoformfield').find('select').find('option');
                 expect(options.length).toEqual(3);
                 var optionA = jq(options[1]);
                 var optionB = jq(options[2]);
