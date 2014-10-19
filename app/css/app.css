@@ -48,6 +48,9 @@ select {
     height: 30px;
     width: 220px;
 }
+input[json] {
+    width: 600px;
+}
 
 .autoform-header {
     color: darkslategray;
@@ -121,6 +124,12 @@ autoformfield.ng-move.ng-move-active + div {
 
 .error {
     color: saddlebrown;
+}
+
+
+body {
+    background: #f3f2ed no-repeat url("../img/ankh_morpork_city_watch.jpeg");
+    background-size: auto;
 }
 
 /* ----- fin des styles fournis ----- */
