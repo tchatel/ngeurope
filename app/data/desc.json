@@ -15,10 +15,21 @@
             }
         },
         {
-            "property": "ps4",
-            "label": "Est-ce que tu veux une PS4 ?",
-            "type": "checkbox",
-            "constraints": {}
+            "property": "race",
+            "label": "Race",
+            "type": "select",
+            "list": {
+                "H": "Humain",
+                "N": "Nain",
+                "T": "Troll",
+                "Z": "Zombie",
+                "V": "Vampire",
+                "L": "Loup-garou",
+                "G": "Golem"
+            },
+            "constraints": {
+                "required": true
+            }
         },
         {
             "property": "age",
@@ -33,28 +44,37 @@
             "label": "Sexe",
             "type": "select",
             "list": {
-                "H": "Homme",
-                "F": "Femme"
-            }
+                "M": "Masculin",
+                "F": "Féminin",
+                "N": "N/A"
+            },
+            "constraints": {}
         },
         {
-            "property": "email",
-            "label": "Adresse mail",
+            "property": "guilde",
+            "label": "Avez-vous été membre de la Guilde des Voleurs ?",
+            "type": "checkbox",
+            "constraints": {}
+        },
+        {
+            "property": "adresse",
+            "label": "Adresse clic-clac",
             "type": "email",
             "constraints": {
                 "required": true
             }
         },
         {
-            "property": "otherEmail",
-            "label": "Autre adresse mail",
-            "type": "email",
+            "property": "arme",
+            "label": "Est-ce que vous disposez d'une arme ? (poignard, épee, hache, hallebarde, balliste, etc.)",
+            "type": "checkbox",
             "constraints": {}
         },
         {
-            "property": "rating",
-            "label": "Note",
-            "type": "rating"
+            "property": "vitesse",
+            "label": "Aptitude à la course",
+            "type": "rating",
+            "constraints": {}
         }
     ]
 }
