@@ -33,7 +33,7 @@ describe("directives", function () {
         beforeEach(function () {
             inject(function ($compile, $rootScope) {
                 scope = $rootScope.$new();
-                html = $compile('<autoformfield desc="desc" model="obj"></autoform>')(scope);
+                html = $compile('<autoformfield desc="desc" model="obj"></autoformfield>')(scope);
             });
         });
 
