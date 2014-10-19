@@ -61,7 +61,7 @@ describe("directives", function () {
             });
         });
 
-        it ("should generate a checkbox", function () {
+        it ("should generate a select", function () {
             inject(function ($compile, $rootScope) {
                 scope.desc = {"fields": [descFieldSelect]};
                 scope.$digest(); // Needed to update the directive template
